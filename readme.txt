@@ -5,7 +5,7 @@
 با توجه به گستردگی کار و محدودیت وقت سعی کردم از روش های ترکیبی یعنی هم استفاده از djago orm و هم raw sql query استفاده کنم.
 	'ENGINE': 'mysql',
         'database NAME': 'employee_manager',
-        'USER': 'employee_manager',
-        'PASSWORD': 'P@ssword',
+        'USER': 'your_user',
+        'PASSWORD': 'your_pass,
         'HOST': 'localhost',
         'PORT': '3306',
