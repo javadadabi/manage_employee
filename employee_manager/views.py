@@ -7,6 +7,7 @@ from .models import Work, Task, Employee, Responsibility
 from django.db import connection, transaction
 from .forms import TaskForm
 from django.template.defaultfilters import slugify
+from unidecode import unidecode
 from django.utils import timezone
 from django.db.models import Sum
 
@@ -47,7 +48,7 @@ def new_task(request, employee_pk, employee_slug):
         if form.is_valid():
             # process the data in form.cleaned_data as required
             task_name = form.cleaned_data['task_name']
-            slug = slugify(task_name)
+            slug = slugify(unidecode(task_name))
             belong_to_work = form.cleaned_data['belong_to_work']
             description = form.cleaned_data['description']
             start_time = form.cleaned_data['start_time']
