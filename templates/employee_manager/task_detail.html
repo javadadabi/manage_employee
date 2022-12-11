@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ task.task_name }}{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item"><a href="{% url 'home' %}">Employees</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'employee_manager:employee_tasks' task.employee.employee_number task.employee.slug %}">{{ task.employee_set.count }}</a></li>
+  <li class="breadcrumb-item active">{{ task.task_name }}</li>
+   <div>
+
+   </div>
+
+
+{% endblock %}

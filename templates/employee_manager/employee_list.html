@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Employees</li>
+{% endblock %}
+
+{% block content %}
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Employee</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Birth date</th>
+        <th>Gender</th>
+        <th>Hire date</th>
+        <th>Current task</th>
+        <th>Latest responsibility</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for employee in employees %}
+        <tr>
+          <td>
+            <a href="{% url 'employee_manager:employee_tasks' employee.employee_number employee.slug %}">{{ employee.get_full_name }}</a>
+            <small class="text-muted d-block">{{ employee.employee_number }}</small>
+              <small class="text-muted d-block">Total task duration: {{ employee.total_task_duration }}</small>
+          </td>
+          <td class="align-middle">
+            {{ employee.first_name }}
+          </td>
+          <td class="align-middle">
+            {{ employee.last_name }}
+          </td>
+          <td class="align-middle">
+              {{ employee.birth_date }}
+          </td>
+          <td class="align-middle">
+              {{ employee.get_gender_display }}
+          </td>
+            <td class="align-middle">
+              {{ employee.hire_date }}
+          </td>
+          <td class="align-middle">
+              {{ employee.tasks.first }}
+          </td>
+          <td class="align-middle">
+              {{ employee.responsibilities.first }}
+          </td>
+          <td class="align-middle">
+{#            {% with post=board.get_last_post %}#}
+{#  {% if post %}#}
+{#    <small>#}
+{#      <a href="{% url 'topic_posts' board.pk post.topic.pk %}">#}
+{#        By {{ post.created_by.username }} at {{ post.created_at }}#}
+{#      </a>#}
+{#    </small>#}
+{#  {% else %}#}
+{#    <small class="text-muted">#}
+{#      <em>No posts yet.</em>#}
+{#    </small>#}
+{#  {% endif %}#}
+{#{% endwith %}#}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

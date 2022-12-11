@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load gravatar %}
+
+{% block title %}{{ employee.get_full_name }}{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item"><a href="{% url 'home' %}">Employees</a></li>
+{#  <li class="breadcrumb-item"><a href="{% url '' topic.board.pk %}">{{ topic.board.name }}</a></li>#}
+  <li class="breadcrumb-item active">{{ employee.get_full_name }}  tasks:</li>
+{% endblock %}
+
+{% block content %}
+    <div class="mb-4">
+    <a href="{% url 'employee_manager:new_task' employee.pk employee.slug %}" class="btn btn-primary">New task</a>
+    </div>
+
+
+
+      <table class="table">
+      <thead class="thead-inverse">
+      <tr>
+        <th>Task number</th>
+        <th>Task name</th>
+        <th>From work</th>
+        <th>Start time</th>
+        <th>Duration</th>
+        <th>End time</th>
+        <th>Registered at</th>
+        <th>Done</th>
+      </tr>
+    </thead>
+       <tbody>
+       {% for task in tasks %}
+        <tr>
+          <td class="align-middle">
+            {{ forloop.counter }}
+          </td>
+          <td class="align-middle">
+            <a href="{% url 'employee_manager:task_detail' task.pk   task.slug %}">{{ task.task_name }}</a>
+
+          </td>
+          <td class="align-middle">
+            {{ task.belong_to_work }}
+          </td>
+          <td class="align-middle">
+            {{ task.start_time }}
+          </td>
+          <td class="align-middle">
+              {{ task.duration }}
+          </td>
+          <td class="align-middle">
+              {{ task.end_time }}
+          </td>
+            <td class="align-middle">
+              {{ task.created }}
+          </td>
+          <td class="align-middle">
+              {{ task.done }}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{#  {% include 'includes/pagination.html' %}#}
+{% endblock %}

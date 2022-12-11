@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Start a New Task{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item"><a href="{% url 'home' %}">Employees</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'employee_manager:employee_tasks' employee_pk employee_slug%}">{{ employee_slug }}</a></li>
+  <li class="breadcrumb-item active">New Task</li>
+{% endblock %}
+
+{% block content %}
+    {% if exception %}
+      <p>{{ exception }}</p>
+    {% else %}
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+    {% endif %}
+{% endblock %}
