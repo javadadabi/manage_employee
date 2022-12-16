@@ -13,7 +13,7 @@ In Unix or Mac:```python3 -m venv env```
 In Windows:```py -m venv env```   
 4- Activate env :    
 In Unix/mac: ```source env/bin/activate```    
-IN windows:``.env\Scripts\activate``
+IN windows:```.env\Scripts\activate```    
 5_a- Extract manage_employee-master and Navigate to project directory while venv is active. for example:
 ```
 cd manage_employee-master
