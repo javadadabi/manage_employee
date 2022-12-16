@@ -23,7 +23,7 @@ In Unix/mac: ```python3 -m pip install -r requirements.txt```
 In windows:  ```py -m pip install -r requirements.txt```    
 6- Our database engine is postgresql, so it's a time to use psql shell, to run some commands    
 In Unix/mac: ```sudo -u postgres psql```      
-In windows: search psql in start menu and run sql shell
+In windows: search psql in start menu and run sql shell    
 7- Run some configuration commands before creating user and database   :
 ```
 SET statement_timeout = 0;
@@ -532,7 +532,7 @@ python manage.py createsuperuser
 python manage.py runserver 
 ```
 18- Open your web browser and go to address http://127.0.0.1:8000/   
-19- Login to site using superuser and password.
+19- Login to site using superuser and password.    
 20- As it's the first time you logged in to the site, go to admin page using admin panel link   
 21- Site admin and staff users can add employees(Note that prior to define     
 an employee, his/her responsibility and user must be defined. So it is better to let employees _who you want to access    
