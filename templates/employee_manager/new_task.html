@@ -9,6 +9,7 @@
 {% endblock %}
 
 {% block content %}
+    <div class="card m-sm-1">
     {% if exception %}
       <p>{{ exception }}</p>
     {% else %}
@@ -18,4 +19,5 @@
     <button type="submit" class="btn btn-success">Save</button>
   </form>
     {% endif %}
+    </div>
 {% endblock %}

@@ -14,7 +14,7 @@ class EmployeeAdmin(admin.ModelAdmin):
 
 @admin.register(Work)
 class WorkAdmin(admin.ModelAdmin):
-    list_display = ['work_title', 'slug', 'description', 'begin', 'expected_duration', 'end', 'created', 'updated',
+    list_display = ['work_title', 'slug', 'description', 'begin_time', 'expected_duration', 'end_time', 'created', 'updated',
                     'done']
     prepopulated_fields = {'slug': ('work_title',)}
     list_editable = ['done']

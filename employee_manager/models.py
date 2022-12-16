@@ -15,9 +15,9 @@ class Work(models.Model):
     work_title = models.CharField(_('Work title'), max_length=200)
     slug = models.SlugField(max_length=200)
     description = models.TextField(_('Description'), blank=True, null=True)
-    begin = models.DateTimeField(_('Begin'), default=timezone.now, null=False)
+    begin_time = models.DateTimeField(_('Begin time'), default=timezone.now, null=False)
     expected_duration = models.DurationField(_('Expected duration'), blank=True, null=True)
-    end = models.DateTimeField(_('End'), auto_now=False, blank=True, null=True)
+    end_time = models.DateTimeField(_('End time'), auto_now=False, blank=True, null=True)
     created = models.DateTimeField(_('created'), auto_now_add=True)
     updated = models.DateTimeField(_('Updated'), auto_now=True)
     done = models.BooleanField(_('Done'), default=False)
@@ -33,7 +33,7 @@ class Work(models.Model):
         return super().save(*args, **kwargs)
 
     class Meta:
-        ordering = ['-begin']
+        ordering = ['-begin_time']
 
 
 class Responsibility(models.Model):

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.postgres',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -80,10 +81,10 @@ WSGI_APPLICATION = 'manage_employee.wsgi.application'
 DATABASES = {
      'default': {
         # 'ENGINE': 'django.db.backends.mysql',
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'employee_manager',
         'USER': 'employee_manager',
-        'PASSWORD': 'your_user',
+        'PASSWORD': "your_password",
         'HOST': 'localhost',
         'PORT': '',
         # 'OPTIONS': {

@@ -53,8 +53,8 @@ def new_task(request, employee_pk, employee_slug):
             description = form.cleaned_data['description']
             start_time = form.cleaned_data['start_time']
             expected_duration = form.cleaned_data['expected_duration']
-            if expected_duration:
-                expected_duration = expected_duration.days * 3600000 + expected_duration.seconds * 1000
+            # if expected_duration:
+            #     expected_duration = expected_duration.days * 3600000 + expected_duration.seconds * 1000
             end_time = form.cleaned_data['end_time']
             done = form.cleaned_data['done']
             created = timezone.now()
