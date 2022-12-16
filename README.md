@@ -1,4 +1,5 @@
 # Employee manager
+## This is a simple web application to manage employees work duration.
 To run this project do as follows:   
 1- Download project or clone it using this command: 
 ```
