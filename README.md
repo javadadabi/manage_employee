@@ -514,14 +514,14 @@ ALTER TABLE ONLY public.employee_manager_task
 -- Database creation completed
 ```
 14- Database creation completed, now exit psql shel by pressing backslash+q , if needed press ctrl+d to exit    
-15- If you skipped step 13 and wand to create database schema using  django migrations do as follows, unless, jump to step 16: 
+15- If you skipped step 13 and wand to create database schema using  django migrations do as follows, unless, jump to step 16:     
 15_a- Make migrations at first:
 ```
 python manage.py makemigrations
 ```
 15_b- Apply django migration to database: 
 ```
-python mange.py migrate
+python manage.py migrate
 ```
 16- Create super user:
 ```
@@ -534,8 +534,8 @@ python manage.py runserver
 18- Open your web browser and go to address http://127.0.0.1:8000/   
 19- Login to site using superuser and password.
 20- As it's the first time you logged in to the site, go to admin page using admin panel link   
-21- Site admin can add employees(Note that prior to define     
+21- Site admin and staff users can add employees(Note that prior to define     
 an employee, his/her responsibility and user must be defined. So it is better to let employees _who you want to access    
 the site_ to sign up at first). A Work can only defined by staff users. Each work can be done with one or more than    
-one task. So you can define a work based on a project period, or monthly rooting works.
+one task. So you can define a work based on a project period, or monthly rooting works.    
 That's it, Enjoy.    
