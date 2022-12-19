@@ -514,7 +514,7 @@ ALTER TABLE ONLY public.employee_manager_task
 -- Database creation completed
 ```
 14- Database creation completed, now exit psql shel by pressing backslash+q , if needed press ctrl+d to exit    
-14_note- If you fill it was boring work, we have prepared a migration script for you to automate execution of this boring tasks.
+14_note: If you feel it was a boring work, we have prepared a migration script for you to automate execution of this boring tasks.
 Just in your activated virtual environment terminal type this:
 ```
 python my_db_migrator.py
